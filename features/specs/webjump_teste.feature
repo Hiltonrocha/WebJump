@@ -3,19 +3,19 @@
 
 Funcionalidade: Validação da Página
 
-@p
+@botoes
 Cenário: Validar Ausência de botoes depois de clique
 Dado que acesse a página inicial da Webjump
 Quando clicar nos botoes One, Two e Four
 Então os botoes não devem mais estar visiveis na tela
 
-@c
+@iframe
 Cenário: IFrame - Validar ausencia de botoes depois de clique 
 Dado que acesse a página inicial da Webjump
 Quando clicar nos botoes One, Two e Four dentro do Iframe
 Então os botoes não devem mais estar visiveis no iframe
 
-@d
+@preenchercampos
 Cenário: Preencher campos
 Dado que acesse a página inicial da Webjump
 Quando preencher o campo nome

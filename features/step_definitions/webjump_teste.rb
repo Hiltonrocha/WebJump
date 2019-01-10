@@ -1,5 +1,4 @@
 Dado("que acesse a página inicial da Webjump") do
-    @home = Home.new
     @home.load
 end
   
@@ -32,7 +31,7 @@ Então("os botoes não devem mais estar visiveis no iframe") do
 end
 
 Quando("preencher o campo nome") do
-    @home.primeiroNome.set "Teste"
+    @home.primeiroNome.set Faker::Name.first_name
 end
   
 Quando("clicar no botao One") do

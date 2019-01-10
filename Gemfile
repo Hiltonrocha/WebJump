@@ -6,5 +6,6 @@ gem 'rake'
 gem 'selenium-webdriver'
 gem 'capybara'
 gem 'pry'
+gem 'faker'
 gem 'site_prism'
 

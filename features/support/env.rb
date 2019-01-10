@@ -2,6 +2,7 @@ require 'rspec'
 require 'cucumber'
 require 'selenium-webdriver'
 require 'pry'
+require 'faker'
 require 'capybara'
 require 'capybara/cucumber'
 require 'site_prism'
@@ -10,6 +11,8 @@ require  'fileutils'
 require_relative 'helpers.rb'
 World(Helpers)
 
+
+Faker::Config.locale = 'pt-BR'
 
 BROWSER = ENV['BROWSER']
 
