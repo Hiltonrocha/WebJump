@@ -10,6 +10,7 @@ class Home < SitePrism::Page
     element :primeiroNome, 'input#first_name'
     element :opcao3, '#opt_three'
     element :comboBox, 'select#select_box'
+    element :imagemSelenium, 'img.img-responsive-center-block[alt="selenium"]'
 
     class IframePage < SitePrism::Page
         element :botao1, 'button#btn_one'

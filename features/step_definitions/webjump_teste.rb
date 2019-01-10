@@ -10,7 +10,6 @@ Quando("clicar nos botoes One, Two e Four") do
 end
   
 Então("os botoes não devem mais estar visiveis na tela") do
-    binding.pry
     aggregate_failures do
         expect(page).to have_no_css('button#btn_one')
         expect(page).to have_no_css('button#btn_two')
@@ -23,7 +22,13 @@ Quando("clicar nos botoes One, Two e Four dentro do Iframe") do
 end
 
 Então("os botoes não devem mais estar visiveis no iframe") do
-    @home.validaIframe
+
+    within_frame(page.find('iframe[src="buttons.html"]')) do 
+        expect(page).to have_no_css('button#btn_one')
+        expect(page).to have_no_css('button#btn_two')
+        expect(page).to have_no_css('button#btn_link')
+    end
+
 end
 
 Quando("preencher o campo nome") do
@@ -40,10 +45,8 @@ end
   
 Quando("selecionar a opcao dois no checkbox") do
     @home.comboBox.select("ExampleTwo")
-    binding.pry
-
 end
   
-  Entao("a imagem do selenium deve estar visivel") do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+Entao("a imagem do selenium deve estar visivel") do
+    expect(page).to have_css('img.img-responsive-center-block[alt="selenium"]')
+end
